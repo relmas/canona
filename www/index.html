@@ -1,0 +1,110 @@
+<!DOCTYPE>
+<html>
+    <meta name="viewport"
+          content="initial-scale=1.0,maximum-scale=1.0,width=device-width,user-scalable = no" />
+    <meta content='yes' name='apple-mobile-web-app-capable'>
+    <meta content='default' name='apple-mobile-web-app-status-bar-style'>
+    <head>
+        <title>Cannons And Soldiers : Mountain Offense</title>
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+        <link rel="stylesheet" type="text/css" href="css/game.css" />
+        <link rel="stylesheet" type="text/css" href="css/fonts.css" />
+
+
+
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            var BM_Pause = true;
+        </script>
+
+        <script type="text/javascript" language="JavaScript" src="js/_pre.js"></script>
+
+        <script type="text/javascript">
+            var gameName = "Cannons and Soldiers";
+            var gameCategory = "categorie skill";
+
+            // Start with init BM API after pre include.
+            var objparams = {_gameName: "Cannons and Soldiers",
+                _categoryName: "categorie skill",
+                _gameId: 0,
+                _gameCode: '0008-cannons'
+            };
+            BM_API.initWithObj(objparams);
+
+            //BM_API.getGeneric().setPortRotation(true);
+            //BM_API.getGeneric().setSplashEnabled(false);		
+
+            BM_API.getAnalytics().includeGA();
+            BM_API.getAd().init();
+            BM_API.getProfile().init();
+        </script>
+
+        <script type="text/javascript">
+
+            //var moreGamesURL = "http://www.boostermedia.com";
+            //var publisherSplit = 0.4;
+            //var showAds = true;
+
+            //var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-16063069-10'], ['_trackPageview']);
+            _gaq.push(['bm._setAccount', 'UA-34318136-1'], ['bm._trackPageview']);
+
+            //		(function() {
+            //			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            //			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            //			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            //		})();
+
+            //		_gaq.push(['bm._trackEvent', gameName, 'indexpage view', gameCategory, 0, false]);	
+            BM_API.getAnalytics().init();
+            BM_API.getAd().init();
+
+        </script>
+    </head>
+    <body>
+        <div id="all">
+            <div id="root"></div>
+            <div id="loadingMsg" class="unselectable"
+                 style="position: absolute; left: 50%; top: 50%;"
+                 onmousedown="return false;">
+                <img src="images/logo.png"
+                     style="position: absolute; width: 258px; height: 159px; left: -124px; top: -125px" />
+                <div id="loadingStateText" class="default-bold"
+                     style="position: absolute; text-align: center; left: -50px; top: 50px; width: 100px; height: 50px;">0%</div>
+            </div>
+            <img id="rotateMsg" class="hidden" src="images/rotate.jpg" />
+
+            <script type="text/javascript" src="js/loader.js"></script>
+            <script type="text/javascript">
+            Loader.updateLoadingState(5);
+            </script>
+            <script type="text/javascript" src="js/box2d.js"></script>
+            <script type="text/javascript">
+                Loader.updateLoadingState(10);
+            </script>
+            <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+            <script type="text/javascript">
+                Loader.updateLoadingState(15);
+            </script>
+            <script type="text/javascript" src="js/thirdParty.js"></script>
+            <script type="text/javascript">
+                Loader.updateLoadingState(20);
+            </script>
+            <script type="text/javascript" src="js/game.js"></script>
+            <script type="text/javascript" src="js/boostermedia.js"></script>
+        </div>
+
+        <script type="text/javascript" language="JavaScript" src="js/_post.js"></script>
+        <script type="text/javascript" language="JavaScript">
+            BM_API.getInterface().init({
+                onBeforeOpenMenu: function() {
+                    BOOSTERMEDIA_TOGGLEPAUSE();
+                },
+                onAfterCloseMenu: function() {
+                    BOOSTERMEDIA_TOGGLEPAUSE();
+                }
+            });
+            //BM_API.getAd().addAdvertising300x250(19802, 88220);
+        </script>	
+    </body>
+</html>
